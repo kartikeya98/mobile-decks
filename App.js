@@ -96,7 +96,7 @@ const Tabs = Platform.OS === 'ios' ? createBottomTabNavigator(
       style: {
         height: 56,
         backgroundColor: Platform.OS === 'ios' ? white : black,
-        shadowColor: 'rgba(0, 0, 0, 0.24)',
+        shadowColor: black,
         shadowOffset: {
           width: 0,
           height: 3
@@ -155,7 +155,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <FlashCardStatusBar backgroundColor={black} barStyle="light-content" />
+        <FlashCardStatusBar backgroundColor={black}  />
         <MainNavigator />
       </View>
     );

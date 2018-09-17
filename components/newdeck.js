@@ -30,21 +30,39 @@ class NewDeck extends Component {
   state = {
     title: ''
   };
-  toDeck = deck => {
+  toDeck = (deck) => {
+    console.log(deck)
     this.props.navigation.navigate('DeckView', {
-      item: deck
+      deck: deck
     });
-  };
+  }
+
+
   submit = () => {
     const { title } = this.state;
-    const id = title.toLowerCase();
-    const deck = {
-      [id]: { title: title, questions: [] }
-    };
+if(title === '')
+{
 
-    addDeck(deck)
+  alert('please enter the field');
+
+}
+else {
+      const id = title.toLocaleLowerCase()
+    const item = { 
+      [id] : { title: title, questions: [] }
+}
+const idx = 0;
+var deck = Object.values(item)[idx]
+
+    console.log(deck);
+
+    addDeck(item)
       .then(() => {
+        
         return this.toDeck(deck);
+      })
+      .catch((err) => {
+        console.log('error:',err)
       })
     
 
@@ -55,7 +73,7 @@ class NewDeck extends Component {
     .then(setLocalNotification)
      this.props.navigation.navigate('NewDeck');
 
-
+    }
 
   };
   render() {

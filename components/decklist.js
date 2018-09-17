@@ -6,12 +6,14 @@ import {
   StyleSheet,
   TouchableOpacity
 } from 'react-native';
-import { getDecks } from '../utils/api';
+import { getDecks, clearStorage } from '../utils/api';
 import { AppLoading } from 'expo';
 import Deck from './Deck';
 
 export default class DeckList extends Component {
-  state = { ready: false, decks: {} };
+  state = { 
+    ready: false,
+     decks: {} };
   componentDidMount() {
     getDecks()
       .then(results => {
@@ -22,6 +24,7 @@ export default class DeckList extends Component {
           ready: true
         }))
       );
+      //  clearStorage();
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState !== this.state) {

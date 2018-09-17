@@ -5,7 +5,9 @@ import {
   purple,
   lightPurp,
   lightYellow,
-  lightGray
+  lightGray,
+  green,
+  orange,
 } from '../utils/colors';
 
 class Quiz extends Component {
@@ -127,7 +129,7 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   iosBtn: {
-    backgroundColor: lightPurp,
+    backgroundColor: orange,
     padding: 10,
     borderRadius: 7,
     height: 46,

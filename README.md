@@ -5,3 +5,7 @@ Project: mobile-decks
 - Install dependencies
   - `npm install`
   - `yarn start`
+
+
+-----------------tested on ANDROID
+
