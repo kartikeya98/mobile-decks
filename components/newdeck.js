@@ -31,7 +31,7 @@ class NewDeck extends Component {
     title: ''
   };
   toDeck = (deck) => {
-    console.log(deck)
+   
     this.props.navigation.navigate('DeckView', {
       deck: deck
     });
@@ -54,16 +54,14 @@ else {
 const idx = 0;
 var deck = Object.values(item)[idx]
 
-    console.log(deck);
+   
 
     addDeck(item)
       .then(() => {
         
         return this.toDeck(deck);
       })
-      .catch((err) => {
-        console.log('error:',err)
-      })
+    
     
 
     this.setState({ title: '' });
