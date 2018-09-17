@@ -6,6 +6,14 @@ import {
   createMaterialTopTabNavigator,
   createStackNavigator
 } from 'react-navigation';
+
+import 
+{
+  clearLocalNotification,
+  setLocalNotification,
+}
+ 
+from './utils/helpers'
 import DeckList from './components/decklist';
 import DeckView from './components/deckview';
 import NewDeck from './components/newdeck';
@@ -151,7 +159,15 @@ const MainNavigator = createStackNavigator({
     }
   }
 });
+
+
 export default class App extends React.Component {
+  componentDidMount() {
+    
+    clearLocalNotification()
+    .then(setLocalNotification)
+     this.props.navigation.navigate('NewDeck');
+  }
   render() {
     return (
       <View style={{ flex: 1 }}>
